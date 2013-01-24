@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<title>CSS Clock</title>
+		<style type="text/css">
+		#clock {
+			width: 400px;
+			height: 400px;
+			background: #f9f9f9;
+			border: 1px solid #161616;
+			position: relative;
+			background: url('clockface.png') no-repeat center;
+		}
+		#clock:after {
+			display: block;
+			position: absolute;
+			margin: auto;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: #000;
+			width: 10px;
+			height: 10px;
+			content: " ";
+			border-radius: 100%;
+		}
+		#clock > div {
+			border-radius: 100%;
+			position: absolute;
+			margin: auto;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			overflow: hidden;
+			/*-webkit-transition:all 0.2s linear;*/
+		}
+		#clock > div:after {
+			display: block;
+			position: absolute;
+			margin: auto;
+			top: 0;
+			left: 0;
+			right: 0;
+			/*bottom: 0; */
+			background: #000;
+			width: 2px;
+			height: 50%;
+			content: " ";
+		}
+		#clock > .second {
+			width: 100%;
+			height: 100%;
+			/*background: #f00;*/
+			-webkit-animation: spin 60s infinite linear;
+		}
+		#clock > .second:after {
+			height: 60%;
+		}
+		#clock > .minute {
+			width: 80%;
+			height: 80%;
+			/*background: #ff0;*/
+			-webkit-animation: spin 3600s infinite linear;
+		}
+		#clock > .hour {
+			width: 60%;
+			height: 60%;
+			/*background: #fa987f;*/
+			-webkit-animation: spin 43200s infinite linear;
+		}
+		@-webkit-keyframes spin {
+		  0% { 
+		  	-webkit-transform: rotate(0deg);
+		  }
+		  100% {
+		  	-webkit-transform: rotate(359deg);
+		  }
+		}
+		</style>
+	</head>
+	<body>
+		<div id="clock">
+			<div class="second"></div>
+			<div class="minute"></div>
+			<div class="hour"></div>
+		</div>
+	</body>
+</html>
